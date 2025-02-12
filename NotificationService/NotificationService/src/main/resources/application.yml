@@ -1,0 +1,17 @@
+server:
+  port: 8081
+
+spring:
+  application:
+    name: NOTIFICATIONSERVICE # Name of the service registered in Eureka
+
+eureka:
+  client:
+    service-url:
+      defaultZone: http://localhost:8761/eureka/ # URL of the Eureka server
+    register-with-eureka: true
+    fetch-registry: true
+  instance:
+    prefer-ip-address: true # Use IP address instead of hostname
+    lease-renewal-interval-in-seconds: 10 # Heartbeat interval
+    lease-expiration-duration-in-seconds: 30 # Time after which the instance is removed if no heartbeat is received
